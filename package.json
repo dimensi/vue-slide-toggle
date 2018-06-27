@@ -1,6 +1,6 @@
 {
   "name": "vue-slide-toggle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue component for like jQuery slideUp / slideDown animations",
   "main": "dist/vue-slide-toggle.js",
   "module": "dist/vue-slide-toggle.es.js",
