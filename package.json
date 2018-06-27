@@ -10,7 +10,8 @@
     "build": "bili",
     "test": "tyu",
     "test:vscode-jest": "tyu --",
-    "test:watch": "tyu -- --watch"
+    "test:watch": "tyu -- --watch",
+    "release": "standard-version"
   },
   "files": [
     "dist"
@@ -46,6 +47,7 @@
     "eslint-plugin-standard": "^3.1.0",
     "flush-promises": "^1.0.0",
     "rollup-plugin-clear": "^2.0.7",
+    "standard-version": "^4.4.0",
     "tyu": "^1.0.6",
     "vue": "^2.5.16",
     "vue-template-compiler": "^2.5.16"
