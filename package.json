@@ -4,7 +4,6 @@
   "description": "Vue component for like jQuery slideUp / slideDown animations",
   "main": "dist/vue-slide-toggle.js",
   "module": "dist/vue-slide-toggle.es.js",
-  "cdn": "dist/vue-slide-toggle.iife.min.js",
   "unpkg": "dist/vue-slide-toggle.iife.min.js",
   "jsdelivr": "dist/vue-slide-toggle.iife.min.js",
   "scripts": {

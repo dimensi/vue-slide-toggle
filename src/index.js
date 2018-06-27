@@ -7,7 +7,7 @@ function install (Vue) {
 }
 
 const plugin = {
-  install
+  install,
 }
 
 export const VueSlideToggle = SlideToggle
