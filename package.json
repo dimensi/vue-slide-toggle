@@ -8,7 +8,6 @@
   "jsdelivr": "dist/vue-slide-toggle.iife.min.js",
   "scripts": {
     "build": "bili",
-    "prepublish": "yarn test && yarn build",
     "test": "tyu",
     "test:vscode-jest": "tyu --",
     "test:watch": "tyu -- --watch"
