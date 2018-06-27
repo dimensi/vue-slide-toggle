@@ -1,3 +1,11 @@
 {
-  "extends": "standard"
+  "root": true,
+  "extends": "standard",
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "rules": {
+    "comma-dangle": ["error", "always-multiline"]
+  }
 }

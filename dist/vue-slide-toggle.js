@@ -28,12 +28,9 @@
       };
     },
     mounted: function mounted() {
-      return new Promise(function ($return, $error) {
-        window.addEventListener('resize', this.getHeight); // recalc height on resize window
+      window.addEventListener('resize', this.getHeight); // recalc height on resize window
 
-        this.getHeight();
-        return $return();
-      }.bind(this));
+      this.getHeight();
     },
     updated: function updated() {
       this.getHeight(); // recalc for dynamic change content
@@ -43,7 +40,7 @@
     },
     computed: {
       style: function style() {
-        var heightSize = this.active ? this.scrollHeight : 0;
+        var heightSize = this.open ? this.scrollHeight : 0;
         return {
           overflow: 'hidden',
           transitionProperty: 'height',
@@ -80,8 +77,6 @@
 
   if (typeof window !== 'undefined') {
     GlobalVue = window.Vue;
-  } else if (typeof global !== 'undefined') {
-    GlobalVue = global.Vue;
   }
 
   if (GlobalVue) {

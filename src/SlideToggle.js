@@ -5,21 +5,21 @@ export default {
     open: Boolean,
     duration: {
       type: Number,
-      default: 300
+      default: 300,
     },
     tag: {
       type: String,
-      default: 'div'
-    }
+      default: 'div',
+    },
   },
 
   data () {
     return {
-      scrollHeight: 0
+      scrollHeight: 0,
     }
   },
 
-  async mounted () {
+  mounted () {
     window.addEventListener('resize', this.getHeight) // recalc height on resize window
     this.getHeight()
   },
@@ -34,22 +34,22 @@ export default {
 
   computed: {
     style () {
-      const heightSize = this.active ? this.scrollHeight : 0
+      const heightSize = this.open ? this.scrollHeight : 0
 
       return {
         overflow: 'hidden',
         transitionProperty: 'height',
         height: `${heightSize}px`,
-        transitionDuration: `${this.duration}ms`
+        transitionDuration: `${this.duration}ms`,
       }
-    }
+    },
   },
 
   methods: {
     getHeight () {
       const { container } = this.$refs
       this.scrollHeight = container.scrollHeight
-    }
+    },
   },
 
   render (h) {
@@ -57,9 +57,9 @@ export default {
       this.tag,
       {
         style: this.style,
-        ref: 'container'
+        ref: 'container',
       },
       this.$slots.default
     )
-  }
+  },
 }
