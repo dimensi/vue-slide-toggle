@@ -1,8 +1,7 @@
-const pgk = require('./package')
 module.exports = {
-  format: ['umd', 'umd-min', 'es', 'cjs'],
+  format: ['umd', 'es', 'iife-min'],
   banner: true,
-  moduleName: pgk.name,
+  moduleName: 'VueSlideToggle',
   plugin: [
     require('rollup-plugin-clear')({
       targets: ['./dist/']

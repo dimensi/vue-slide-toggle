@@ -2,7 +2,11 @@
   "name": "vue-slide-toggle",
   "version": "1.0.0",
   "description": "Vue component for like jQuery slideUp / slideDown animations",
-  "main": "index.js",
+  "main": "dist/vue-slide-toggle.js",
+  "module": "dist/vue-slide-toggle.es.js",
+  "cdn": "dist/vue-slide-toggle.iife.min.js",
+  "unpkg": "dist/vue-slide-toggle.iife.min.js",
+  "jsdelivr": "dist/vue-slide-toggle.iife.min.js",
   "scripts": {
     "build": "bili",
     "prepublish": "yarn test && yarn build",
@@ -13,6 +17,9 @@
     "dist"
   ],
   "keywords": [
+    "vue.js",
+    "vue",
+    "animations",
     "slideUp",
     "slideDown",
     "slideToggle"
@@ -20,6 +27,13 @@
   "author": {
     "name": "Nikita Nafranets",
     "email": "eddimensi@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dimensi/vue-slide-toggle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dimensi/vue-slide-toggle/issues"
   },
   "license": "MIT",
   "devDependencies": {
@@ -31,6 +45,7 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
+    "rollup-plugin-clear": "^2.0.7",
     "tyu": "^1.0.6"
   }
 }
