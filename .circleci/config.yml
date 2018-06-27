@@ -4,6 +4,7 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: circleci/node:9.11.2
+
 jobs:
   test:
     <<: *defaults  
@@ -12,8 +13,8 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-.
-          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+	  # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
       - run: npm install
@@ -35,25 +36,28 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
+          name: Build
+          command: npm run build
+      - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
           command: npm publish
-          
-  workflows:
-    version: 2
-    test-deploy:
-      jobs:
-        - test:
-            filters:
-              tags:
-                only: /^\d.\d.\d$/
-        - deploy:
-            requires:
-              - test
-            filters:
-              tags:
-                only: /^\d.\d.\d$/
-              branches:
-                ignore: /.*/
+            
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /^\d.\d.\d$/
+      - deploy:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^\d.\d.\d$/
+            branches:
+              ignore: /.*/
