@@ -1,0 +1,36 @@
+{
+  "name": "vue-slide-toggle",
+  "version": "1.0.0",
+  "description": "Vue component for like jQuery slideUp / slideDown animations",
+  "main": "index.js",
+  "scripts": {
+    "build": "bili",
+    "prepublish": "yarn test && yarn build",
+    "test": "tyu",
+    "test:watch": "tyu -- --watch"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "slideUp",
+    "slideDown",
+    "slideToggle"
+  ],
+  "author": {
+    "name": "Nikita Nafranets",
+    "email": "eddimensi@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "bili": "^3.1.2",
+    "eslint": "^5.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "tyu": "^1.0.6"
+  }
+}
