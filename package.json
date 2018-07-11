@@ -8,10 +8,16 @@
   "jsdelivr": "dist/vue-slide-toggle.iife.min.js",
   "scripts": {
     "build": "bili",
-    "test": "tyu",
-    "test:vscode-jest": "tyu --",
-    "test:watch": "tyu -- --watch",
-    "release": "standard-version"
+    "start": "static ./static/index.html -p 3000",
+    "release": "standard-version -a",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://127.0.0.1:3000 cy:run"
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "npm run build && git add ."
+    }
   },
   "files": [
     "dist"
@@ -39,15 +45,20 @@
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.20",
     "bili": "^3.1.2",
+    "cypress": "^3.0.2",
     "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-cypress": "^2.0.1",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "flush-promises": "^1.0.0",
+    "node-static": "^0.7.10",
     "rollup-plugin-clear": "^2.0.7",
     "standard-version": "^4.4.0",
+    "start-server-and-test": "^1.5.0",
     "tyu": "^1.0.6",
     "vue": "^2.5.16",
     "vue-template-compiler": "^2.5.16"

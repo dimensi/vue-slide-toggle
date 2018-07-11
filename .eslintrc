@@ -1,11 +1,17 @@
 {
   "root": true,
   "extends": "standard",
+  "plugins": [
+    "cypress",
+    "chai-friendly"
+  ],
   "env": {
-    "jest": true,
-    "browser": true
+    "browser": true,
+    "cypress/globals": true
   },
   "rules": {
-    "comma-dangle": ["error", "always-multiline"]
+    "comma-dangle": ["error", "always-multiline"],
+    "no-unused-expressions": 0,
+    "chai-friendly/no-unused-expressions": 2
   }
 }
