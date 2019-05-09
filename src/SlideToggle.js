@@ -16,6 +16,8 @@ export default {
   data () {
     return {
       scrollHeight: 0,
+      doneOpenTransition: false,
+      innerOpen: this.open,
     }
   },
 
@@ -32,9 +34,25 @@ export default {
     window.removeEventListener('resize', this.getHeight)
   },
 
+  watch: {
+    open(bool) {
+      if (!bool) {
+        this.getHeight()
+        this.doneOpenTransition = false;
+        this.$nextTick().then(() => {
+          this.innerOpen = false;
+        })
+      } else {
+        this.innerOpen = true;
+      }
+    }
+  },
+
   computed: {
     style () {
-      const heightSize = this.open ? this.scrollHeight : 0
+      if (this.innerOpen && this.doneOpenTransition) return null;
+
+      const heightSize = this.innerOpen ? this.scrollHeight : 0
 
       return {
         overflow: 'hidden',
@@ -50,6 +68,12 @@ export default {
       const { container } = this.$refs
       this.scrollHeight = container.scrollHeight
     },
+
+    handleTransition () {
+      if (this.innerOpen) {
+        this.doneOpenTransition = true;
+      }
+    }
   },
 
   render (h) {
@@ -58,6 +82,9 @@ export default {
       {
         style: this.style,
         ref: 'container',
+        on: {
+          transitionend: this.handleTransition,
+        }
       },
       this.$slots.default
     )
