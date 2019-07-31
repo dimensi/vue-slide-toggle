@@ -2,7 +2,7 @@
 Vue component for like jQuery slideUp / slideDown animations
 
 # Demo
-[![Edit Vue Template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/43pvo3zj0)
+[![Edit Vue Template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/vue-template-5t1le?fontsize=14)
 
 # Install
 Via Yarn:
